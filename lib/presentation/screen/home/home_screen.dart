@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widget_app/config/menu/menu_item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -53,7 +54,11 @@ class _CustomListTile extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-        //TODO navegar a otra pantalla
+        //Navigator.of(context).push(MaterialPageRoute(
+        //builder: (context) => const ButtonsScreen(),
+        //));
+        // Navigator.pushNamed(context, menuItem.link);
+        context.push(menuItem.link);
       },
     );
   }
